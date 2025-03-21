@@ -1,8 +1,3 @@
----
-title: Introduction to Java
-
----
-
 # Introduction to Java
 
 ## 1. History of Java
