@@ -1,0 +1,74 @@
+# Access Modifiers in Java
+
+Access modifiers define the visibility and accessibility of classes, methods, and variables in Java.
+
+### 1. Types of Access Modifiers
+- **Public**: Accessible from anywhere (inside and outside the package).
+- **Private**: Accessible only within the same class.
+- **Default (Package-private)**: If no modifier is specified, the member is accessible only within the same package.
+- **Protected**: Accessible within the same package and subclasses (even if they are in different packages).
+
+###  Access Modifiers for Top-Level Classes
+- Only **public** and **default** are allowed for top-level classes.
+- **private** and **protected** are not allowed for top-level classes.
+
+---
+
+# **Classification of Keywords in Java**
+
+Java keywords are reserved words that have a predefined meaning in the language.
+
+### 1. Java Keywords (53)
+These are the core reserved words used in Java programming. They serve various functions such as defining data types, control flow, exception handling, etc.
+
+### 2. Literals in Java (3)
+Literals are predefined constant values in Java that are not considered keywords but have a special meaning.
+
+### 3. Reserved Words for Future Use (12)
+These words are reserved by Java but are not yet implemented or used.
+
+---
+
+# **Identifiers in Java**
+
+Identifiers are names given to variables, methods, classes, and interfaces in Java.
+
+### Rules for Identifiers
+- Can contain letters (A-Z, a-z), digits (0-9), underscore (_), and dollar sign ($).
+- Cannot start with a digit (e.g., `1variable` is invalid).
+- Cannot be a Java keyword (e.g., `int`, `class`, `void` cannot be used as an identifier).
+- Case-sensitive (`Variable` and `variable` are different).
+- No special characters except `_` and `$` are allowed.
+- Can be of any length, but meaningful names are recommended.
+
+#### Examples
+```java
+int age;       // Valid
+int _count;    // Valid
+int $salary;   // Valid
+int 1number;   // Invalid
+int class;     // Invalid (class is a keyword)
+```
+
+---
+
+# **Naming Conventions in Java**
+
+Naming conventions improve code readability and maintainability.
+
+### 1. Class and Interface Names
+- Use **PascalCase** (each word starts with a capital letter).
+- **Examples**: `StudentDetails`, `BankAccount`, `EmployeeRecord`.
+
+### 2. Variable and Method Names
+- Use **camelCase** (first word is lowercase, subsequent words start with uppercase).
+- **Examples**: `studentName`, `calculateSalary()`.
+
+### 3. Constant Names
+- Use **UPPER_CASE** with underscores (_).
+- **Examples**: `PI`, `MAX_VALUE`, `MIN_BALANCE`.
+
+### 4. Package Names
+- Use all lowercase letters, usually in reverse domain name format.
+- **Examples**: `com.example.project`, `org.company.module`.
+
