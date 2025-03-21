@@ -154,10 +154,3 @@ public class NonPrimitiveExample {
 | Examples      | `int`, `char`, `boolean`        | `String`, `Array`, `Class`      |
 
 ---
-
-## **Conclusion**
-- Java variables store data and can be of different types (local, instance, class).
-- Java supports **primitive** (like `int`, `boolean`, `char`) and **non-primitive** (like `String`, `Array`, `Class`) data types.
-- Primitive types store values directly, whereas non-primitive types store references to values.
-
-Would you like me to add real-world examples or a quiz to test understanding? 😊
