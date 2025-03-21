@@ -152,5 +152,3 @@ public class NonPrimitiveExample {
 | Size           | Fixed size                       | Varies based on implementation  |
 | Methods       | Cannot use methods on them      | Have built-in methods           |
 | Examples      | `int`, `char`, `boolean`        | `String`, `Array`, `Class`      |
-
----
