@@ -1,7 +1,7 @@
 # **Notes on Code, Developers, Programming Languages, and Applications**  
 
 ### **1. What is Code?**  
-Code is a set of instructions written in a programming language that tells a computer how to perform specific tasks. It acts as a communication bridge between humans and computers, allowing software to function as intended.  
+Code is a set of instructions written in a programming language that tells a computer how to perform specific tasks. It acts as a communication bridge between humans and computers, allowing software to function as intended. 
 
 ### **2. Who is a Developer?**  
 A developer (also known as a programmer or software engineer) is a person who writes, tests, and maintains code to build software applications. Developers specialize in different areas, such as:  
