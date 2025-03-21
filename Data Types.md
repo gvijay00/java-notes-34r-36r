@@ -1,0 +1,163 @@
+
+# **Variables in Java**
+A variable is a container for storing data values during the execution of a program. In Java, every variable has a **name**, a **type**, and a **value**.
+
+### **Types of Variables and Their Memory Storage Areas**
+
+Java provides three types of variables:
+
+### **1. Local Variables**
+- **Definition:** Declared inside a method, constructor, or block.
+- **Scope:** Limited to the block in which they are declared.
+- **Memory Location:** Stored in **Stack Memory**.
+- **Initialization:** Must be explicitly initialized before use.
+- **Example:**
+  ```java
+  public class Example {
+      public void display() {
+          int number = 10;  // Local variable
+          System.out.println("Number: " + number);
+      }
+  }
+  ```
+
+### **2. Instance Variables (Non-static fields)**
+- **Definition:** Declared inside a class but outside any method.
+- **Scope:** Belongs to an instance of the class, and each object gets its own copy.
+- **Memory Location:** Stored in **Heap Memory**.
+- **Initialization:** Default values are provided (0 for numbers, `null` for objects, `false` for boolean).
+- **Example:**
+  ```java
+  class Student {
+      String name;  // Instance variable
+      int age;      // Instance variable
+  }
+  ```
+
+### **3. Class Variables (Static fields)**
+- **Definition:** Declared inside a class with the **static** keyword.
+- **Scope:** Shared among all instances of the class.
+- **Memory Location:** Stored in the **Method Area (Class Memory)**.
+- **Initialization:** Default values are provided like instance variables.
+- **Example:**
+  ```java
+  class Employee {
+      static String company = "Tech Corp"; // Class variable
+  }
+  ```
+
+---
+
+## **Declaring Variables in Java**
+Java allows two ways to declare variables:
+
+### **1. Separate Declaration and Initialization**
+You can first declare a variable and then assign a value later.
+```java
+int number;  // Declaration
+number = 25; // Initialization
+```
+
+### **2. Variable Initialization (Declaration + Initialization)**
+Declare and initialize a variable in a single step.
+```java
+int number = 25;
+```
+
+---
+
+# **Data Types in Java**
+Java is a **statically typed** language, meaning every variable must have a predefined type.
+
+Java data types are categorized into **Primitive Data Types** and **Non-Primitive Data Types**.
+
+![data types](https://media.geeksforgeeks.org/wp-content/uploads/20240809125618/Java-Data-Types.png "data types")
+
+---
+
+### **1. Primitive Data Types**
+Primitive data types store simple values directly in memory. They have a fixed size and do not require additional methods for manipulation.
+
+| Data Type | Size           | Default Value | Description                                      |
+|-----------|--------------|--------------|--------------------------------------------------|
+| `byte`    | 1 byte (8 bits) | 0            | Stores small integers (-128 to 127).             |
+| `short`   | 2 bytes (16 bits) | 0        | Stores medium-sized integers (-32,768 to 32,767). |
+| `int`     | 4 bytes (32 bits) | 0        | Stores standard integers (-2^31 to 2^31-1).      |
+| `long`    | 8 bytes (64 bits) | 0L       | Stores large integers (-2^63 to 2^63-1).         |
+| `float`   | 4 bytes (32 bits) | 0.0f     | Stores decimal numbers with single precision.    |
+| `double`  | 8 bytes (64 bits) | 0.0d     | Stores decimal numbers with double precision.    |
+| `char`    | 2 bytes (16 bits) | '\u0000' | Stores a single character (Unicode values).      |
+| `boolean` | 1 bit           | false      | Stores `true` or `false`.                        |
+
+#### **Examples of Primitive Data Types**
+```java
+public class PrimitiveExample {
+    public static void main(String[] args) {
+        byte a = 127;
+        short b = 32000;
+        int c = 100000;
+        long d = 10000000000L;
+        float e = 5.75f;
+        double f = 19.99d;
+        char g = 'A';
+        boolean h = true;
+        
+        System.out.println("Byte: " + a);
+        System.out.println("Short: " + b);
+        System.out.println("Int: " + c);
+        System.out.println("Long: " + d);
+        System.out.println("Float: " + e);
+        System.out.println("Double: " + f);
+        System.out.println("Char: " + g);
+        System.out.println("Boolean: " + h);
+    }
+}
+```
+
+---
+
+### **2. Non-Primitive Data Types**
+Non-primitive data types are more complex and can store multiple values. They store the **memory address** of the actual data rather than the data itself.
+
+| Data Type | Description                                     |
+|-----------|---------------------------------------------|
+| `String`  | Stores sequences of characters (text).      |
+| `Arrays`  | Stores multiple values of the same type.    |
+| `Classes` | User-defined blueprints for objects.        |
+| `Interfaces` | Defines a contract that a class must follow. |
+
+#### **Examples of Non-Primitive Data Types**
+```java
+public class NonPrimitiveExample {
+    public static void main(String[] args) {
+        // String example
+        String name = "John Doe";
+        System.out.println("Name: " + name);
+
+        // Array example
+        int[] numbers = {10, 20, 30, 40};
+        System.out.println("First number: " + numbers[0]);
+    }
+}
+
+
+```
+
+---
+
+## **Key Differences Between Primitive and Non-Primitive Data Types**
+| Feature           | Primitive Data Types                     | Non-Primitive Data Types          |
+|------------------|----------------------------------|----------------------------------|
+| Memory Storage  | Stores actual values in memory  | Stores memory address of values |
+| Size           | Fixed size                       | Varies based on implementation  |
+| Methods       | Cannot use methods on them      | Have built-in methods           |
+| Examples      | `int`, `char`, `boolean`        | `String`, `Array`, `Class`      |
+
+---
+
+## **Conclusion**
+- Java variables store data and can be of different types (local, instance, class).
+- Java supports **primitive** (like `int`, `boolean`, `char`) and **non-primitive** (like `String`, `Array`, `Class`) data types.
+- Primitive types store values directly, whereas non-primitive types store references to values.
+
+Would you like me to add real-world examples or a quiz to test understanding? 😊
