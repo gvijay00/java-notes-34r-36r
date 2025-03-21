@@ -1,9 +1,3 @@
----
-title: Methods in Java
-
----
-
-
 # **Notes on Code, Developers, Programming Languages, and Applications**  
 
 ### **1. What is Code?**  
