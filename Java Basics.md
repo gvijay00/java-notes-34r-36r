@@ -4,7 +4,7 @@
 A **language** is a way to communicate, either between people or between people and computers. It has two important parts:
 
 ### **1. Syntax**  
-The rules that decide how to write in that language (like grammar in English or how to write code in Java).
+The rules that decide how to write in that language (like grammar in English or how to write code in Java)
 
 ### **2. Semantics**  
 The meaning of what is written (like correct sentences in English or logical correctness in programming).
