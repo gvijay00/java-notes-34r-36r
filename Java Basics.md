@@ -149,7 +149,5 @@ public class HelloJava {
    ```
    **Output:** `Hello, Java!`
 
----
 
-This guide covers the basics of Java in a simple way for easy understanding!
 
