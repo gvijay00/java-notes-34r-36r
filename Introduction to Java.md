@@ -12,6 +12,7 @@ Java is a **high-level, object-oriented, and platform-independent** programming 
 - Used in **web development, mobile applications, enterprise applications, and embedded systems**.
 - Designed to be **simple, secure, and robust**, with **automatic memory management**.
 - Java code is first **compiled into bytecode**, which is executed by the **JVM**, making it independent of the underlying operating system.
+  
 
 ## 3. Features of Java
 Java is a powerful and versatile language that offers several essential features:
