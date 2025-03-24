@@ -89,7 +89,7 @@ Used to perform logical operations, mainly used in decision-making.
 | Operator | Description | Example |
 |----------|------------|---------|
 | `&&` | Logical AND | `(a > 5 && b < 10)` |
-| `||` | Logical OR | `(a > 5 || b < 2)` |
+| || | Logical OR | (a > 5 || b < 2) |
 | `!` | Logical NOT | `!(a > 5)` |
 
 ### **Example**
