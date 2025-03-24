@@ -1,0 +1,116 @@
+# Static Methods in Java
+
+## What are Static Methods?
+Static methods in Java are methods that belong to the class rather than instances of the class. They are declared using the `static` keyword and can be called without creating an instance of the class.
+
+## Declaration of Static Methods
+A static method is defined using the `static` keyword before the return type:
+
+```java
+class Example {
+    static void displayMessage() {
+        System.out.println("This is a static method.");
+    }
+}
+```
+
+### How to Call Static Methods?
+Since static methods belong to the class, they can be called using the class name:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        Example.displayMessage(); // Calling static method using class name
+    }
+}
+```
+
+## Characteristics of Static Methods
+1. **Belong to Class:** Static methods are associated with the class itself rather than any specific object.
+2. **Can Access Static Members Only:** Static methods can only access static variables and other static methods directly.
+3. **Cannot Use `this` or `super`:** Static methods cannot refer to instance variables or methods using `this` or `super`.
+4. **Improves Memory Efficiency:** Since static methods do not require object instantiation, they help optimize memory usage.
+5. **Shared Among All Instances:** A static method can be accessed by all instances of the class without duplication.
+
+## Example: Static Method Usage
+```java
+class MathOperations {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int result = MathOperations.add(10, 20);
+        System.out.println("Addition Result: " + result);
+    }
+}
+```
+
+## Accessing Static Methods Within the Same Class
+If the static method is within the same class, it can be called directly without using the class name:
+
+```java
+class Sample {
+    static void greet() {
+        System.out.println("Hello, Welcome!");
+    }
+    
+    public static void main(String[] args) {
+        greet(); // Directly calling static method
+    }
+}
+```
+
+## **Three Ways to Access Static Members in Java:**
+1. **Using the Class Name** (Recommended)
+   ```java
+   Example.display(); // Accessing using class name
+   ```
+
+2. **Using an Object (Not Recommended but Possible)**
+   ```java
+   Example obj = new Example();
+   obj.display(); // Warning: Should be accessed using class name
+   ```
+
+3. **Calling Directly (Within the Same Class)**
+   ```java
+   display(); // Direct call within the same class
+   ```
+
+### **Best Practice:**
+- Always use **ClassName.methodName()** to call static methods.
+- Avoid using objects to access static methods.
+- Within the same class, direct calls are acceptable.
+
+## Restrictions of Static Methods
+1. **Cannot Access Instance Members:** Static methods cannot access instance variables or instance methods directly.
+2. **Cannot Override in Subclasses:** Static methods cannot be overridden but can be hidden if redefined in a subclass.
+3. **Cannot Use `this` or `super`:** As static methods are not tied to an object, they cannot use `this` or `super` keywords.
+
+### Example: Attempting to Access Instance Members in Static Method (Error)
+```java
+class Demo {
+    int x = 10;
+    
+    static void show() {
+        // System.out.println(x); // Compilation Error: Cannot access instance variable in static method
+    }
+}
+```
+
+## When to Use Static Methods?
+- When a method does not depend on instance variables.
+- For utility or helper methods (e.g., `Math.sqrt()`, `Collections.sort()`).
+- When a function performs an independent operation (e.g., database connection utility methods).
+
+## Summary
+- Static methods belong to the class, not instances.
+- They can be called using the class name.
+- They can access only static members.
+- They cannot use `this` or `super`.
+- They cannot be overridden but can be hidden in subclasses.
+- Best suited for utility functions and independent operations.
+
