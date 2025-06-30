@@ -1,0 +1,180 @@
+
+
+# 🔷 Deque and ArrayDeque in Java
+
+---
+
+##  Deque (Double Ended Queue)
+
+###  Definition
+
+A `Deque` (pronounced “deck”) is a **double-ended queue** that allows insertion and deletion at both **front and rear**.
+
+> It's an **interface** in the `java.util` package.
+
+---
+
+## 🔹 Declaration
+
+```java
+Deque<Integer> deque = new ArrayDeque<>();
+```
+
+> Common implementation: `ArrayDeque`, `LinkedList`
+
+---
+
+## 🔹 Characteristics of Deque
+
+| Feature           | Value                              |
+| ----------------- | ---------------------------------- |
+| Insertion/removal | Both ends (front and rear)         |
+| Null allowed?     | ❌ No in `ArrayDeque`               |
+| Thread-safe?      | ❌ No (use `ConcurrentLinkedDeque`) |
+| Duplicates?       | ✅ Yes                              |
+| Interface         | Deque (extends `Queue`)            |
+| Implementations   | `ArrayDeque`, `LinkedList`         |
+
+---
+
+## 🔹 Key Methods of Deque
+
+| Method                          | Description                    |
+| ------------------------------- | ------------------------------ |
+| `addFirst(e)` / `offerFirst(e)` | Adds at front                  |
+| `addLast(e)` / `offerLast(e)`   | Adds at rear                   |
+| `removeFirst()` / `pollFirst()` | Removes from front             |
+| `removeLast()` / `pollLast()`   | Removes from rear              |
+| `getFirst()` / `peekFirst()`    | Gets first element (no remove) |
+| `getLast()` / `peekLast()`      | Gets last element (no remove)  |
+| `contains(Object o)`            | Checks if element exists       |
+| `size()`                        | Returns number of elements     |
+| `clear()`                       | Removes all elements           |
+
+---
+
+## 🔷 ArrayDeque in Java
+
+###  Definition
+
+`ArrayDeque` is a **resizable array implementation** of the `Deque` interface.
+
+> Faster than `Stack` and `LinkedList` for stack/queue operations.
+
+---
+
+## 🔹 Declaration
+
+```java
+ArrayDeque<String> stack = new ArrayDeque<>();
+```
+
+---
+
+## 🔹 Characteristics of ArrayDeque
+
+| Feature       | Value                               |
+| ------------- | ----------------------------------- |
+| Null allowed? | ❌ No (`NullPointerException`)       |
+| Thread-safe?  | ❌ No                                |
+| Implements    | `Deque`, `Queue`                    |
+| Faster than   | `Stack` and `LinkedList`            |
+| Backed by     | Resizable array (no capacity limit) |
+
+---
+
+## 🔹 Basic Example – Deque as Queue
+
+```java
+import java.util.*;
+
+public class DequeAsQueue {
+    public static void main(String[] args) {
+        Deque<Integer> queue = new ArrayDeque<>();
+
+        queue.offer(10); // addLast
+        queue.offer(20);
+        queue.offer(30);
+
+        System.out.println("Front: " + queue.peek()); // 10
+
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll()); // 10 20 30
+        }
+    }
+}
+```
+
+---
+
+## 🔹 Basic Example – Deque as Stack
+
+```java
+import java.util.*;
+
+public class DequeAsStack {
+    public static void main(String[] args) {
+        Deque<String> stack = new ArrayDeque<>();
+
+        stack.push("A"); // addFirst
+        stack.push("B");
+        stack.push("C");
+
+        System.out.println("Top: " + stack.peek()); // C
+
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop()); // C B A
+        }
+    }
+}
+```
+
+---
+
+## 🔹 Real-Life Use Cases
+
+| Use Case                | How It Works                         |
+| ----------------------- | ------------------------------------ |
+| Undo/Redo Operations    | Stack behavior with push/pop         |
+| Palindrome Checking     | Compare front and rear elements      |
+| Sliding Window Problems | Maintain window elements efficiently |
+| Browser History         | Navigate back and forward            |
+| Job Scheduling Queues   | Add/remove tasks from both ends      |
+
+---
+
+## 🔹 Deque vs Queue vs Stack vs ArrayDeque
+
+| Feature       | Deque                        | Queue          | Stack      | ArrayDeque        |
+| ------------- | ---------------------------- | -------------- | ---------- | ----------------- |
+| Direction     | Both ends                    | FIFO           | LIFO       | Both (Deque impl) |
+| Null allowed? | ❌ (ArrayDeque)               | ✅ (LinkedList) | ✅          | ❌                 |
+| Thread-safe?  | ❌                            | ❌              | ✅ (Legacy) | ❌                 |
+| Performance   | Better than Stack/LinkedList |                |            |                   |
+| Random Access | ❌                            | ❌              | ❌          | ❌                 |
+
+---
+
+## 🔹 Interview Highlights
+
+* `Deque` allows **double-ended** operations.
+* `ArrayDeque` is **faster** than `Stack`/`LinkedList`.
+* No `null` elements in `ArrayDeque`.
+* Used for **stack and queue** operations.
+* Can be used for **sliding window**, **palindrome**, and **LIFO/FIFO** needs.
+
+---
+
+## 🔹 Summary Table
+
+| Property     | ArrayDeque                      |
+| ------------ | ------------------------------- |
+| Implements   | `Deque`, `Queue`                |
+| Backed by    | Array (Resizable)               |
+| Null Allowed | ❌ No                            |
+| Thread-Safe  | ❌ No                            |
+| Use as Stack | ✅ Yes (`push()`, `pop()`)       |
+| Use as Queue | ✅ Yes (`offer()`, `poll()`)     |
+| Performance  | Fast for insertion/removal ends |
+
+
