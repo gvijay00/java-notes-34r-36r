@@ -1,0 +1,113 @@
+# Java `Collectors` — Complete Methods List
+
+The `java.util.stream.Collectors` class provides static methods used with `Stream.collect()` to collect, group, transform, summarize, and reduce stream elements.
+
+Since you're learning Java Streams for interviews, here's a structured reference covering the major methods, including Java 8 methods and additions from later Java versions.
+
+Import:
+
+```
+import java.util.stream.Collectors;
+```
+
+## 1. Basic collection methods
+
+| Method                                                      | Purpose                                |
+| ----------------------------------------------------------- | -------------------------------------- |
+| `toList()`                                                  | Collect elements into a list           |
+| `toSet()`                                                   | Collect unique elements into a set     |
+| `toCollection(Supplier)`                                    | Choose a collection implementation     |
+| `toMap(keyMapper, valueMapper)`                             | Collect elements into a map            |
+| `toMap(keyMapper, valueMapper, mergeFunction)`              | Handle duplicate map keys              |
+| `toMap(keyMapper, valueMapper, mergeFunction, mapSupplier)` | Choose the map implementation          |
+| `toConcurrentMap(...)`                                      | Collect into a concurrent map          |
+| `toUnmodifiableList()`                                      | Create an unmodifiable list (Java 10+) |
+| `toUnmodifiableSet()`                                       | Create an unmodifiable set (Java 10+)  |
+| `toUnmodifiableMap(...)`                                    | Create an unmodifiable map (Java 10+)  |
+
+## 2. Grouping and partitioning methods
+
+| Method                                                     | Purpose                                         |
+| ---------------------------------------------------------- | ----------------------------------------------- |
+| `groupingBy(classifier)`                                   | Group elements by a key                         |
+| `groupingBy(classifier, downstream)`                       | Group and apply another collector               |
+| `groupingBy(classifier, mapFactory, downstream)`           | Group using a specified map type                |
+| `groupingByConcurrent(classifier)`                         | Concurrent grouping                             |
+| `groupingByConcurrent(classifier, downstream)`             | Concurrent grouping with a downstream collector |
+| `groupingByConcurrent(classifier, mapFactory, downstream)` | Concurrent grouping with a specified map type   |
+| `partitioningBy(predicate)`                                | Split elements into `true` and `false` groups   |
+| `partitioningBy(predicate, downstream)`                    | Partition and apply another collector           |
+
+## 3. Counting, summing, averaging and statistics
+
+| Method                      | Purpose                                    |
+| --------------------------- | ------------------------------------------ |
+| `counting()`                | Count elements                             |
+| `summingInt(mapper)`        | Sum integer values                         |
+| `summingLong(mapper)`       | Sum long values                            |
+| `summingDouble(mapper)`     | Sum double values                          |
+| `averagingInt(mapper)`      | Calculate average of integer values        |
+| `averagingLong(mapper)`     | Calculate average of long values           |
+| `averagingDouble(mapper)`   | Calculate average of double values         |
+| `summarizingInt(mapper)`    | Count, sum, min, max, average for integers |
+| `summarizingLong(mapper)`   | Count, sum, min, max, average for longs    |
+| `summarizingDouble(mapper)` | Count, sum, min, max, average for doubles  |
+
+## 4. Joining strings
+
+| Method                               | Purpose                                          |
+| ------------------------------------ | ------------------------------------------------ |
+| `joining()`                          | Join strings without a delimiter                 |
+| `joining(delimiter)`                 | Join strings using a delimiter                   |
+| `joining(delimiter, prefix, suffix)` | Join strings with a delimiter, prefix and suffix |
+
+Example:
+
+```
+List<String> names = Arrays.asList("Ravi", "Priya", "Arun");
+
+String result = names.stream()
+    .collect(Collectors.joining(", ", "[", "]"));
+
+System.out.println(result);
+
+// [Ravi, Priya, Arun]
+```
+
+## 5. Mapping, filtering and flattening
+
+| Method                             | Purpose                                             | Introduced |
+| ---------------------------------- | --------------------------------------------------- | ---------- |
+| `mapping(mapper, downstream)`      | Transform elements before downstream collection     | Java 8     |
+| `filtering(predicate, downstream)` | Filter within a downstream collector                | Java 9     |
+| `flatMapping(mapper, downstream)`  | Flatten nested streams before downstream collection | Java 9     |
+
+## 6. Reduction and comparison
+
+| Method                           | Purpose                                         |
+| -------------------------------- | ----------------------------------------------- |
+| `reducing(identity, op)`         | Reduce elements using an identity and operation |
+| `reducing(op)`                   | Reduce elements without an explicit identity    |
+| `reducing(identity, mapper, op)` | Map elements and reduce them                    |
+| `maxBy(comparator)`              | Find the maximum element                        |
+| `minBy(comparator)`              | Find the minimum element                        |
+
+## 7. Finishing and combining collectors
+
+| Method                                    | Purpose                                      | Introduced |
+| ----------------------------------------- | -------------------------------------------- | ---------- |
+| `collectingAndThen(downstream, finisher)` | Transform the final collection result        | Java 8     |
+| `teeing(collector1, collector2, merger)`  | Run two collectors and combine their results | Java 12    |
+
+## 8. Concurrent collection methods
+
+These are particularly useful when working with parallel streams and concurrent maps.
+
+| Method                                                                | Purpose                                                 |
+| --------------------------------------------------------------------- | ------------------------------------------------------- |
+| `toConcurrentMap(keyMapper, valueMapper)`                             | Collect into a concurrent map                           |
+| `toConcurrentMap(keyMapper, valueMapper, mergeFunction)`              | Resolve duplicate keys                                  |
+| `toConcurrentMap(keyMapper, valueMapper, mergeFunction, mapSupplier)` | Choose the concurrent map implementation                |
+| `groupingByConcurrent(classifier)`                                    | Group elements concurrently                             |
+| `groupingByConcurrent(classifier, downstream)`                        | Concurrent grouping with a downstream collector         |
+| `groupingByConcurrent(classifier, mapFactory, downstream)`            | Concurrent grouping with a specified map implementation |
